@@ -28,7 +28,7 @@ namespace Examples.Samples
                 // leave zero, if you don't know how height and width is it.
                 Height = 1080,
                 Width = 1080,
-                Uri = @"c:\someawesomepicture.jpg"
+                Uri = @"C:\Users\idrees.FI\Desktop\yky\01.jpg"
             };
             // Add user tag (tag people)
             mediaImage.UserTags.Add(new InstaUserTagUpload

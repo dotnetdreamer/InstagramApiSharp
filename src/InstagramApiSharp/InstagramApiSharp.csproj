@@ -1,12 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net452;uap10.0;netstandard1.3</TargetFrameworks>
+    <TargetFrameworks>net451</TargetFrameworks>
     <VersionPrefix>1.5.0</VersionPrefix>
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <AssemblyName>InstagramApiSharp</AssemblyName>
     <PackageId>InstagramApiSharp</PackageId>
-    <NetStandardImplicitPackageVersion>2.0</NetStandardImplicitPackageVersion>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -207,7 +206,7 @@ v1.3.3.0
         <TargetFramework>netstandard2.0;netstandard1.3</TargetFramework>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(OS)' == 'Windows_NT' ">
-      <TargetFrameworks>netstandard2.0;net452;uap10.0;netstandard1.3</TargetFrameworks>
+      <TargetFrameworks>net451</TargetFrameworks>
     </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
@@ -222,35 +221,11 @@ v1.3.3.0
     <None Include="LICENSE.txt" Pack="true" Visible="true" PackagePath="$(PackageLicenseFile)" />
   </ItemGroup>
   
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net452' OR  '$(TargetFramework)' == 'net471'">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net451' OR  '$(TargetFramework)' == 'net471'">
     <Reference Include="System" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web" />
     <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <PropertyGroup Condition="'$(TargetFramework)' == 'uap10.0'">
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
-    <NugetTargetMoniker>UAP,Version=v10.0</NugetTargetMoniker>
-    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
-    <TargetFrameworkIdentifier>.NETCore</TargetFrameworkIdentifier>
-    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
-    <DefineConstants>$(DefineConstants);WINDOWS_UWP</DefineConstants>
-    <LanguageTargets>$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets</LanguageTargets>
-    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
-  </PropertyGroup>
-  
-  <ItemGroup Condition=" '$(TargetFramework)' == 'uap10.0' ">
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform " Version="6.1.9" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
-    <PackageReference Include="Microsoft.CSharp" Version="4.3.0" />
-    <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.3.0" />
   </ItemGroup>
   
   <ItemGroup>
